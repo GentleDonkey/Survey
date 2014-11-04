@@ -1,0 +1,148 @@
+h1 {
+    color: #000;
+}
+.row {
+    display: table;
+    width: 100%;
+}
+.styled-select{
+    font-size: 15px;
+    bottom: 0;
+    width: 200px;
+}
+.styled-label {
+    font-size: 16px;
+    width: 305px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 1em;
+}
+.styled-input {
+    font-size: 16px;
+    resize: none;
+}
+.styled-input:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.27);
+}
+.extra-input {
+    margin-left: 0.5em !important;
+    display: none;
+}
+.input-status {
+    display: inline-block;
+    width: 50px;
+    background-color: green;
+    padding: 5px;
+    margin-left: 1em;
+}
+section header {
+    border-top: 2px solid gray;
+    background-color: #EEEEEE;
+    border-bottom: 2px solid gray;
+    padding: 7px;
+    margin: 2em 0;
+}
+section header div {
+    font-size: 14.5px;
+    line-height: 1.8em;
+}
+ol li {
+    margin-left: 2em;
+}
+#success1 {
+    margin-bottom: 0;
+    color: #263849;
+    font-size: 21px;
+}
+.left-question{
+    width: 24%;
+    font-size: 15px;
+}
+.long-question{
+    width: 50%;
+}
+#normal-content .row:nth-child(odd){
+    background-color: #ebf5ff;
+}
+#normal-content .row:hover{
+    background-color: #eee;
+}
+.wider{
+    margin: 3em;
+}
+.wider .ui-button{
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+#visited_before_when {
+    margin-left: 10px;
+}
+main > h1 {
+    color: black;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+textarea {
+    height: 60px;
+    width: 400px !important;
+}
+button[type='submit']{
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+label.error[generated='true'] {
+    display: block;
+    padding: 0.1em;
+}
+#dass-rating-scale li {
+    list-style: none;
+}
+section header h3 {
+    color: black;
+    font-size: 22px;
+    font-weight: normal;
+}
+#confidentiality header h4 {
+    text-transform: uppercase;
+}
+#confidentiality header ul li {
+    list-style: disc inside none;
+}
+.styled-label, .left-question {
+    display: table-cell;
+    padding: 1em;
+    vertical-align: middle;
+}
+.row .buttonset label {
+    margin: 1em 0;
+}
+.styled-input, .styled-select, .styled-textarea, input[type='email'] {
+    margin: 1em !important;
+}
+#consentBtnWrapper {
+    float: left;
+    margin-right: 1em;
+}
+#consentText {
+    position: relative;
+    bottom: 5px;
+    z-index: -1;
+}
+#completionMessage {
+    text-align: center;
+    text-indent: 0;
+    margin-bottom: 4em;
+}
+.error {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    padding: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+#submit-loader{
+    display: none;
+    text-align: center;
+}
