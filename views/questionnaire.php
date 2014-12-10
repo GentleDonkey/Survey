@@ -2,20 +2,18 @@
 
 <!--BEGIN MAIN BODY CONTENT-->
 
-<h1><?php $l10n->_e('title'); ?></h1>
+<h1><?php $l10n->_e('title'); echo $session['session_en'];?></h1>
 
 <div id="normal-content">
 	<form action="questionnaire.php?page=add&user=<?php echo $user; ?>" method="post" autocomplete='off'>
 		<section id='questionnaire'> 
 			<header>
-        		<h3><?php $l10n->_e('QuestionnaireTitle'); ?></h3>
+        		<!-- <h3><?php $l10n->_e('QuestionnaireTitle'); echo $session['session_en'];?></h3> -->
         		<div>
                 	<p>
                 		<?php $l10n->_e('helloSASS1');?>
                 		<b><?php echo ' ' . $student['0']['student_first_name'] . ' ' . $student['0']['student_last_name']; ?></b> 
                 		<?php $l10n->_e('helloSASS2');?>
-                		<b><?php echo ' ' . $student['0']['service_name_en']; ?></b>
-                		<?php $l10n->_e('helloSASS3');?>
                 	</p>
                 </div>
         	</header>
@@ -23,10 +21,13 @@
         	<?php if($model -> checkFirstTime($_GET['user'])){
             	foreach ($genneral as $a) {                               
                 	echo '<div class="row">' . 
-                  			'<label name="question[' . $a['question_id'] . ']" visibility="hidden">' . $a['question_id'] . '</label>' .
                   			'<span class="left-question">' . $a['question_content_en'] .  '</span>' .
-                    		'<span class="buttonset">' .
-                        		'<input type="radio" id="radio1ForQuestion' . $a['question_id'] . '" name="answerForQuestion' . $a['question_id'] . '" value="1"><label for="radio1ForQuestion' . $a['question_id'] . '">'; 
+                    		'<span class="buttonset">';
+                				foreach($a['answers'] as $key=>$answ){
+                					echo '<input type="radio" id="radio' . $key . 'ForQuestion' . $a['question_id'] . '" name="answerForQuestion' . $a['question_id'] . '" value="'.$answ['answer_id'].'">' .
+                							'<label for="radio' . $key . 'ForQuestion' . $a['question_id'] . '">' . $answ['answer_content_en'] . '</label>';
+                				}
+                        		/*'<input type="radio" id="radio1ForQuestion' . $a['question_id'] . '" name="answerForQuestion' . $a['question_id'] . '" value="1"><label for="radio1ForQuestion' . $a['question_id'] . '">'; 
                         		$l10n->_e('1stLevelAnswer'); 
                           		echo '</label>' .
                             	'<input type="radio" id="radio2ForQuestion' . $a['question_id'] . '" name="answerForQuestion' . $a['question_id'] . '" value="2"><label for="radio2ForQuestion' . $a['question_id'] . '">'; 
@@ -40,10 +41,10 @@
                               	echo '</label>' .
                             	'<input type="radio" id="radio5ForQuestion' . $a['question_id'] . '" name="answerForQuestion' . $a['question_id'] . '" value="5"><label for="radio5ForQuestion' . $a['question_id'] . '">'; 
                             	$l10n->_e('5thLevelAnswer'); 
-                              	echo '</label>' .
-                    		'</span>' .
-                    		'<span>' .
-                    			'<input type="text" id="commentForQuestion' . $a['question_id'] . '" name="commentForQuestion' . $a['question_id'] . '" style="width:40%" class="styled-input" placeholder="Your Comment...">' . 
+                              	echo '</label>' .*/
+                    		echo '</span>' .
+                    		'<br><span>' .
+                    			'<input type="text" id="commentForQuestion' . $a['question_id'] . '" name="commentForQuestion' . $a['question_id'] . '" style="width:80%" class="styled-input" placeholder="Your Comment...">' . 
                     		'</span>' .
                 		'</div>';
             	}
@@ -52,10 +53,13 @@
         	<?php 
             	foreach ($particular as $b) {
             		echo '<div class="row">' . 
-              				'<label name="question[' . $b['question_id'] . ']" visibility="hidden">' . $b['question_id'] . '</label>' .
                   			'<span class="left-question">' . $b['question_content_en'] .  '</span>' .
-                    		'<span class="buttonset">' .
-                        		'<input type="radio" id="radio1ForQuestion' . $b['question_id'] . '" name="answerForQuestion' . $b['question_id'] . '" value="1"><label for="radio1ForQuestion' . $b['question_id'] . '">';
+                    		'<span class="buttonset">';
+            					foreach($b['answers'] as $key=>$answ){
+            						echo '<input type="radio" id="radio' . $key . 'ForQuestion' . $b['question_id'] . '" name="answerForQuestion' . $b['question_id'] . '" value="'.$answ['answer_id'].'">' .
+            								'<label for="radio' . $key . 'ForQuestion' . $b['question_id'] . '">' . $answ['answer_content_en'] . '</label>';
+            					}
+                        		/*'<input type="radio" id="radio1ForQuestion' . $b['question_id'] . '" name="answerForQuestion' . $b['question_id'] . '" value="1"><label for="radio1ForQuestion' . $b['question_id'] . '">';
                         		$l10n->_e('1stLevelAnswer');
                           		echo '</label>' .
                         		'<input type="radio" id="radio2ForQuestion' . $b['question_id'] . '" name="answerForQuestion' . $b['question_id'] . '" value="2"><label for="radio2ForQuestion' . $b['question_id'] . '">';
@@ -69,10 +73,10 @@
                           		echo '</label>' .
                         		'<input type="radio" id="radio5ForQuestion' . $b['question_id'] . '" name="answerForQuestion' . $b['question_id'] . '" value="5"><label for="radio5ForQuestion' . $b['question_id'] . '">';
                         		$l10n->_e('5thLevelAnswer');
-                          		echo '</label>' .
-                    		'</span>' .
-                    		'<span>' .
-                    			'<input type="text" id="commentForQuestion' . $b['question_id'] . '" name="commentForQuestion' . $b['question_id'] . '" style="width:40%" class="styled-input" placeholder="Your Comment...">' .
+                          		echo '</label>' .*/
+                    		echo '</span>' .
+                    		'<br><span>' .
+                    			'<input type="text" id="commentForQuestion' . $b['question_id'] . '" name="commentForQuestion' . $b['question_id'] . '" style="width:80%" class="styled-input" placeholder="Your Comment...">' .
                     		'</span>' .
                 		'</div>';
             	}                

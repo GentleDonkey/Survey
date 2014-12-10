@@ -8,12 +8,12 @@
 		<section id='questionnaire'> 
 			<h2 class="styled-h2" style="text-align: center; margin-bottom: 10em;">
 				<span style="color: black"><?php echo $student['0']['student_first_name'] . ' ' . $student['0']['student_last_name']; ?></span>
-				<?php $l10n->_e('thankYou1'); ?>
+				<?php $l10n->_e('sorry1'); ?>
 				<span style="color: black"><?php echo $student['0']['service_name_en']; ?></span>
-				<?php $l10n->_e('thankYou2'); ?>
+				<?php $l10n->_e('sorry2'); ?>
 				<br>
 				<?php 
-   
+
 				if($model -> checkOtherSurvey($_GET['user'])){
 					echo '<br>'; $l10n->_e('otherSurveyAsked1'); 
 					echo '<span style="color: black">'; echo $newQues['0']['service_name_en']; echo'</span>';
@@ -29,9 +29,7 @@
 				}else{
 					echo '</h2>';
 					echo '<div style="text-align:center"><a href="javascript:closeMe()" class="btn-icon btn-maroon btn-heart">'; $l10n->_e('doneBtn'); echo '<span></span></a></div>';
-				}
-				
-				?>
+				}?>
 		</section>
 </div>
 <!--END MAIN BODY CONTENT -->

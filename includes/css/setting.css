@@ -1,0 +1,87 @@
+#submit-loader{
+    display: none;
+    text-align: center;
+}
+
+button[type='submit']{
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+   
+   
+   
+    .accommodation {
+        width: 200px;
+        height: 40px;
+        cursor: pointer;
+        display:inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+        text-align: center;
+        margin: 5px 3px;
+        line-height: 40px;
+        border-radius: 1px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .accommodation:hover {
+        background-color: black;
+        color: white;
+    }
+    .sortable {
+        border: 0;
+        border-top: 1px dotted #263849;
+        margin: 0 auto;
+        min-height: 50px;
+        padding: 5px;
+    }
+    div .sortable:last-child {
+        border-bottom: 1px dotted #263849;
+    }
+    .emptyContent{
+        line-height: 50px;
+    }
+    .acc-type-software, .acc-type-computer-accessories, .acc-type-service-provider, .acc-type-permitted-resources, .acc-type-faciliies, .acc-type-personal-items, .acc-type-transcription{
+        color:white;
+    }
+    .acc-type-adaptive-equipment, .acc-type-scheduling, .acc-type-copy-of-exam, .acc-type-extra-time{
+        color: black;
+    }
+    .acc-type-software{
+        background-color: #00b100;
+    }
+    .acc-type-computer-accessories{
+        background-color: #0080ff;
+    }
+    .acc-type-service-provider{
+        background-color: #d80000;
+    }
+    .acc-type-adaptive-equipment{
+        background-color: #ffff4d;
+    }
+    .acc-type-permitted-resources{
+        background-color: #5a5a5a;
+    }
+    .acc-type-facilities{
+        background-color: #ff8000;
+    }
+    .acc-type-personal-items{
+        background-color: #8d8d8d;
+    }
+    .acc-type-scheduling{
+        background-color: #cecece;
+    }
+    .acc-type-copy-of-exam{
+        background-color: #ff728a;
+    }
+    .acc-type-extra-time{
+        background-color: #cecece;
+    }
+    .acc-type-transcription{
+        background-color: #925a2f;
+    }
+    #divider{
+        margin-top: 2.5em;
+    }
